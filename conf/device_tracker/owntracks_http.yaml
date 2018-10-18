@@ -1,0 +1,8 @@
+- platform: owntracks_http
+  max_gps_accuracy: 400
+  waypoints: True
+  waypoint_whitelist:
+    - scott
+  new_device_defaults:
+    track_new_devices: no
+    hide_if_away: no

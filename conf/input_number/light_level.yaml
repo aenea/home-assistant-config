@@ -1,0 +1,17 @@
+level_sunset_end:
+  name: 'Sunset light level'
+  min: 10
+  max: 100
+  step: 1
+
+level_sunset_start:
+  name: 'Dusk light level'
+  min: 10
+  max: 100
+  step: 1
+
+level_target:
+  name: 'Target light level'
+  min: 10
+  max: 100
+  step: 1

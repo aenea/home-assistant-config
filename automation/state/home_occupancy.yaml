@@ -1,0 +1,31 @@
+#################################################################
+## Control occupancy mode
+#################################################################
+
+
+# Turn off home occupancy when everyone leaves
+- alias: Turn off home occupancy
+
+  trigger:
+    - platform: state
+      entity_id: group.presence_all
+      to: 'not_home'
+
+  action:
+    - service: homeassistant.turn_off
+      data:
+        entity_id: input_boolean.home_occupancy
+        
+
+# Turn on home occupancy when someone arrives
+- alias: Turn on home occupancy
+
+  trigger:
+    - platform: state
+      entity_id: group.presence_all
+      to: 'home'
+
+  action:
+    - service: homeassistant.turn_on
+      data:
+        entity_id: input_boolean.home_occupancy

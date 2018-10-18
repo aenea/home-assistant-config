@@ -1,0 +1,7 @@
+---
+db_url: !secret mysql_dburl
+purge_interval: 1
+purge_keep_days: 2
+exclude:
+  domains:
+    - media_player

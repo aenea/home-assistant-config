@@ -1,0 +1,8 @@
+- platform: unifi
+  username: !secret unifi_username
+  password: !secret unifi_password
+  host: !secret unifi_host
+  port: !secret unifi_port
+  new_device_defaults:
+    track_new_devices: no
+    hide_if_away: no

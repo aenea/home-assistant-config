@@ -1,0 +1,13 @@
+# Ignore everything
+/*
+
+# Track these files
+!.gitignore
+!configuration.yaml
+!/automation
+!/conf
+!/custom_components
+!/automation/*
+!/conf/*
+!/custom_components/*
+

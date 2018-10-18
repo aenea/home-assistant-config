@@ -1,0 +1,84 @@
+homeassistant: !include conf/homeassistant.yaml
+
+automation: !include_dir_merge_list automation
+config:
+device_tracker: !include_dir_merge_list conf/device_tracker
+discovery: !include conf/discovery.yaml
+ecobee: !include conf/ecobee.yaml
+frontend:
+group: !include_dir_merge_named conf/group/
+history:
+http: !include conf/http.yaml
+hue: !include conf/hue.yaml
+input_boolean: !include_dir_merge_named conf/input_boolean/ 
+input_number: !include_dir_merge_named conf/input_number/
+input_select: !include_dir_merge_named conf/input_select/
+logbook:
+map:
+recorder: !include conf/recorder.yaml
+remote: !include_dir_merge_list conf/remote
+sensor: !include_dir_merge_list conf/sensor/
+script: !include scripts.yaml
+sun:
+updater: !include conf/updater.yaml
+zwave: !include conf/zwave.yaml
+
+
+
+notify:
+  name: pushbullet_scott
+  platform: pushbullet
+  api_key: !secret pushbullet_api_key_scott
+
+
+
+media_player:
+  - platform: squeezebox
+    host: 192.168.1.60
+
+logger:
+  default: warn
+  logs:
+    homeassistant.components.mqtt: debug
+
+lutron_caseta_pro:
+    bridges:
+      - host: 192.168.1.142
+        mac: f4:5e:ab:59:f1:51
+        switch: [ 4, 12 ]
+
+light:
+  - platform: lifx
+    server: 192.168.1.31
+    broadcast: 192.168.1.255
+
+  - platform: group
+    name: Kitchen lights
+    entities:
+      - light.kitchen_light_switch_level
+      - light.kitchen_sink_light_switch_level
+      - light.kitchen_table_pendants
+      - light.kitchen_under_cabinet
+
+binary_sensor:
+  - platform: template
+    sensors:
+      sleeping:
+        friendly_name: 'Sleep trigger'
+        value_template: >-
+          {{ is_state('group.presence_all', 'home')
+             and is_state('group.all_remotes', 'off')
+             and is_state('group.lights_sleep_off', 'off')
+             and is_state('input_boolean.night_mode', 'on') }}
+
+mqtt:
+  broker: 127.0.0.1
+  port: 1883
+  username: homeassistant
+  password: !secret mqtt_password
+
+ifttt:
+  key: !secret ifttt_key
+
+scene: !include_dir_merge_list conf/scene
+

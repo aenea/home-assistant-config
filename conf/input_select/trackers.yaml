@@ -1,0 +1,43 @@
+front_porch_lights_tracker:
+  name: 'Front porch lighting status'
+  options:
+    - 'on'
+    - 'off'
+laundry_room_lights_tracker:
+  name: 'Laundry room lighting status'
+  options:
+    - 'manual'
+    - 'off'
+    - 'on'
+    - 'stage'
+  initial: 'off'
+living_room_fan_tracker:
+  name: 'Living room fan status'
+  options:
+    - 'on'
+    - 'off'
+master_bedroom_fan_tracker:
+  name: 'Master bedroom fan status'
+  options:
+    - 'on'
+    - 'off'
+pantry_lights_tracker:
+  name: 'Pantry lighting status'
+  options:
+    - 'on'
+    - 'off'
+second_bathroom_lights_tracker:
+  name: 'Second bathroom lighting status'
+  options:
+    - 'off'
+    - 'on'
+utility_room_lights_tracker:
+  name: 'Utility room lighting status'
+  options:
+    - 'off'
+    - 'on'
+washing_machine_tracker:
+  name: 'Washing machine status'
+  options:
+    - 'idle'
+    - 'running'

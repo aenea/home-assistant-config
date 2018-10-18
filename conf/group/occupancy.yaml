@@ -1,0 +1,16 @@
+kitchen_occupancy:
+  - binary_sensor.kitchen_motion_sensor_sensor
+  - binary_sensor.kitchen_motion_sensor_sensor_2
+
+laundry_room_occupancy:
+  name: Laundry room occupancy
+  entities:
+    - binary_sensor.laundry_room_motion_sensor_sensor
+
+living_room_occupancy:
+  - binary_sensor.living_room_motion_sensor_sensor
+  - binary_sensor.living_room_occupancy
+
+second_bathroom_occupancy:
+  - binary_sensor.back_bathroom_motion_sensor_1_sensor
+  - binary_sensor.bathroom_2_motion_sensor_sensor

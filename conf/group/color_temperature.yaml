@@ -1,0 +1,7 @@
+color_temperature:
+  name: Color temperature
+  entities:
+    - input_number.ct_sunrise
+    - input_number.ct_noon
+    - input_number.ct_sunset
+    - input_number.ct_target

@@ -1,0 +1,32 @@
+#################################################################
+## Control night mode
+#################################################################
+
+
+# Turn off night mode at sunrise
+- alias: Turn off night mode
+
+  trigger:
+    - platform: sun
+      event: sunrise
+
+  action:
+    - service: homeassistant.turn_off
+      data:
+        entity_id: input_boolean.night_mode
+        
+
+# Turn on night mode at sunset
+- alias: Turn on night mode
+
+  trigger:
+    - platform: sun
+      event: sunset
+
+  action:
+    - service: homeassistant.turn_on
+      data:
+        entity_id: input_boolean.night_mode
+    - service: homeassistant.turn_on
+      data:
+        entity_id: input_boolean.moonlight

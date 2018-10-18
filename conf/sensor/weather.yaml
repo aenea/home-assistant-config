@@ -1,0 +1,13 @@
+- platform: darksky
+  api_key: !secret darksky_api_key
+  monitored_conditions:
+    - summary
+    - icon
+    - nearest_storm_distance
+    - cloud_cover
+
+- platform: wunderground
+  api_key: !secret wunderground_api_key
+  pws_id: 'KOHMARYS9'
+  monitored_conditions:
+    - temp_f

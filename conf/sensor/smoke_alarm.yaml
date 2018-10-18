@@ -1,0 +1,33 @@
+- platform: template
+  sensors:
+    hallway_smoke:
+      value_template: >-
+          {%- if is_state("sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type", "13") %}
+              Idle
+          {%- elif is_state("sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type", "1") %}
+              Fire
+          {%- elif is_state("sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type", "2") %}
+              CO
+          {%- elif is_state("sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type", "12") %}
+              Testing
+          {% else %}
+              Unknown
+          {%- endif %}
+      friendly_name: 'Hallway smoke alarm'
+
+- platform: template
+  sensors:
+    laundry_room_smoke:
+      value_template: >-
+          {%- if is_state("sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_2", "13") %}
+              Idle
+          {%- elif is_state("sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_2", "1") %}
+              Fire
+          {%- elif is_state("sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_2", "2") %}
+              CO
+          {%- elif is_state("sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_2", "12") %}
+              Testing
+          {% else %}
+              Unknown
+          {%- endif %}
+      friendly_name: 'Laundry room smoke alarm'

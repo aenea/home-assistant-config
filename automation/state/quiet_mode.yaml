@@ -1,0 +1,32 @@
+#################################################################
+## Control quiet mode
+#################################################################
+
+
+# Turn off quiet mode when the sleep sensor turns off
+- alias: Turn off quiet mode
+
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.sleeping
+      to: 'off'
+
+  action:
+    - service: homeassistant.turn_off
+      data:
+        entity_id: input_boolean.quiet_mode
+
+
+# Turn on quiet mode when the sleep sensor turns on
+- alias: Turn on quiet mode
+
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.sleeping
+      to: 'on'
+    
+  action:
+    - service: homeassistant.turn_on
+      data:
+        entity_id: input_boolean.quiet_mode
+

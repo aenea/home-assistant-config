@@ -1,0 +1,10 @@
+- name: Morning lights
+  entities:
+    group.bar_lights:
+      state: on
+      brightness: 100
+      transition: 120
+    light.kitchen_sink:
+      state: on
+      brightness: 100
+      transition: 120

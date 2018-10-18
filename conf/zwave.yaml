@@ -1,0 +1,4 @@
+---
+autoheal: true
+network_key: !secret zwave_network_key
+usb_path: /dev/zwave

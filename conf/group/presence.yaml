@@ -1,0 +1,10 @@
+presence_paula:
+  - device_tracker.paulasphone
+
+presence_scott:
+  - device_tracker.scott_phone
+  - device_tracker.scottsphone
+
+presence_all:
+  - group.presence_paula
+  - group.presence_scott

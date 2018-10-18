@@ -1,0 +1,2 @@
+entry_doors:
+  - binary_sensor.back_door_sensor

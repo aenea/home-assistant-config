@@ -1,0 +1,37 @@
+- name: Bed time lights
+  entities:
+    group.bar_lights:
+      state: off
+      transition: 15
+    group.fireplace_lights:
+      state: off
+      transition: 15
+    group.living_room_lights:
+      state: off
+      transition: 15
+    group.tv_room_lights:
+      state: off
+      transition: 15
+    light.kitchen_table_pendants:
+      state: off
+      transition: 15
+    light.kitchen_main_lights:
+      state: off
+      transition: 15
+    light.kitchen_under_cabinet:
+      state: off
+      transition: 15
+    group.laundry_room_lights:
+      state: off
+      transition: 15
+    group.second_bathroom_lights:
+      state: off
+      transition: 15
+    group.pantry_lights:
+      state: off
+    group.utility_room_lights:
+      state: off
+    light.kitchen_sink:
+      state: on
+      brightness: 5
+      transition: 15
